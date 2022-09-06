@@ -1,5 +1,5 @@
 body{
-  width: 100vw;
+  width: 100%;
   height: auto;
   margin: 0px;
   padding: 0px;
@@ -12,6 +12,7 @@ body{
   background-image: linear-gradient(90deg, #11096b, #331757);
   background-position: center;
   background-attachment: fixed;
+  background-size: cover;
   padding-bottom: 8rem;
 }
 
@@ -66,14 +67,14 @@ main{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 100vw;
+  width: 100%;
   height: auto;
   margin: 0px;
   border: 0px;
 }
 /* body-sections */
 .body-sections{
-  width: 100vw;
+  width: 100%;
   height: auto;
   margin: 0px;
   padding: 0px;
