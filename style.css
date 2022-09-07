@@ -31,14 +31,14 @@ body{
   text-align: center;
 }
 .social{
-  margin-top: 10vh;
-  font-size: 1.5rem;
+  margin: 3vmin 0 3vmin 0;
+  font-size: 1.2rem;
 }
 nav{
   border: 0;
 }
 #nav-menu{
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-family: monospace;
   color: white;
   padding-top: 1rem;
@@ -57,10 +57,11 @@ nav{
   text-decoration: none;
 }
 .social a:hover{
-  color: #5f14ff;
+  color: #e8d5d3;
+  border-bottom: 2px solid #e8d5d3;
 }
 .your-name{
-  margin-top: 10vh;
+  margin: 5vmin 0 0 0;
   font-weight: bold;
   font-size: 2rem;
   font-family: monospace;
@@ -177,42 +178,31 @@ main{
 }
 
 
-/* work-experience */
-.work-exp{
-  min-height: 10vh;
+/* work-experience and education*/
+.work-exp, .education-details{
   height: auto;
   width: 40%;
   margin: 1% 0;
-  border: 2px solid grey;
+  border: 2px solid unset;
   border-radius: 1rem;
   position: relative;
   left: 5%;
   padding: 1rem;
   box-sizing: border-box;
-}
-.work-exp::after{
-  content: " ";
-  width: 0.5rem;
-  height: 0.5rem;
-  border: 0.3rem solid grey;
-  background-color: black;
-  border-radius: 50%;
-  position: absolute;
-  right: -15%;
-  top: 0;
-  z-index: 1;
-}
-.work-exp:nth-of-type(2n)::after{
-  left: -15%;
-  top: 0rem;
-  z-index: 1;
-}
-.work-exp:nth-of-type(2n){
-  left: 55%;
-}
-.work-exp{
   display: flex;
   flex-direction: column;
+}
+.work-exp:nth-of-type(2n), .education-details:nth-of-type(2n){
+  left: 55%;
+}
+.designation, .course-name{
+  align-self: flex-end;
+  color: blue;
+}
+.organisation-name, .school-name{
+  align-self: flex-end;
+  color: orange;
+  margin-top: 0.2rem;
 }
 .duration{
   align-self: flex-end;
@@ -221,10 +211,32 @@ main{
 }
 .explain{
   margin-top: 1rem;
+  text-align: justify;
+  position: relative;
+}
+.work-exp:nth-of-type(odd) .designation::after, .education-details:nth-of-type(odd) .course-name::after{
+  content: " ";
+  width: 0.5rem;
+  height: 3rem;
+  background-color: purple;
+  border-radius: 0.5rem;
+  position: absolute;
+  right: -1rem;
+  z-index: 1;
+}
+.work-exp:nth-of-type(even) .designation::before, .education-details:nth-of-type(even) .course-name::before{
+  content: " ";
+  width: 0.5rem;
+  height: 3rem;
+  background-color: purple;
+  border-radius: 0.5rem;
+  position: absolute;
+  left: -1rem;
+  z-index: 1;
 }
 .path{
   border: 2px dashed #0b8896;
-  height: 90%;
+  height: 100%;
   width: 0;
   position: absolute;
   left: 50%;
@@ -234,54 +246,57 @@ main{
   top: 5%;
   font-size: 1.5rem;
   transform: rotate(90deg);
-  margin: 0;
+  margin-top: -2rem;
+  margin-left: -0.1rem;
+  padding: 0;
   z-index: 2;
   color: #1315ab;
 }
 
-@media only screen and (max-width:768px){
-  nav a{
-    font-family: cursive;
-  }
+@media only screen and (max-width:980px){
   .section-display{
     width: 90%;
   }
-  .work-exp{
+  .work-exp, .education-details{
+    width: 40%;
+    font-family: cursive;
+  }
+  .work-exp:nth-of-type(odd) .designation::after, .education-details:nth-of-type(odd) .course-name::after{
+    right: -1rem;;
+  }
+  .work-exp:nth-of-type(even) .designation::before, .education-details:nth-of-type(even) .course-name::before{
+    left: -1rem;;
+  }
+}
+
+@media only screen and (max-width:768px){
+  .section-display{
+    width: 90%;
+  }
+  .path{
+    left: 5%
+  }
+  .work-exp, .education-details{
     width: 80%;
     font-family: cursive;
     left: 20% !important;
   }
-  .path{
-    left: 5%;
-  }
-  .work-exp::after{
-    right: 117%;
-  }
-  .work-exp:nth-of-type(2n)::after{
-    left: -21%;
+  .work-exp:nth-of-type(odd) .designation::after, .education-details:nth-of-type(odd) .course-name::after{
+    left: -2rem;;
   }
 }
 
 @media only screen and (max-width:572px){
-  nav a{
-    font-family: monospace;
-  }
   .section-display{
     width: 95%;
   }
-  .work-exp{
+  .work-exp, .education-details{
     width: 80%;
     font-family: monospace;
     left: 20% !important;
   }
-  .path{
-    left: 8%;
-  }
-  .work-exp::after{
-    right: 112%;
-  }
-  .work-exp:nth-of-type(2n)::after{
-    left: -18%;
+  .work-exp:nth-of-type(odd) .designation::after, .education-details:nth-of-type(odd) .course-name::after{
+    left: -2rem;;
   }
 }
 
