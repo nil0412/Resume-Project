@@ -19,12 +19,11 @@ body{
 .horizontal-list{
   list-style: none;
   margin: 0px;
-  padding-left: 0px;
   padding: none;
 }
 .horizontal-list li{
   display: inline-block;
-  margin: 0px 15px 0px 0px;
+  margin: 0;
 }
 .text-center{
   text-align: center;
@@ -33,11 +32,15 @@ body{
   margin-top: 10vh;
   font-size: 1.5rem;
 }
+nav{
+  border: 0;
+}
 #nav-menu{
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   font-family: monospace;
   color: white;
   padding-top: 1rem;
+  border: 0;
 }
 #nav-menu a{
   color: white;
@@ -137,12 +140,13 @@ main{
 }
 /* skills */
 .progress-bar{
-  width: 20rem;
+  width: 10rem;
   height: 2rem;
   border: 2px solid black;
   border-radius: 2rem;
-  margin: 2rem 0;
+  margin: 2% 1%;
   background-color: #cfc5c4;
+  justify-content: space-between;
 }
 .progress-bar span{
   font-size: 1.1rem;
@@ -169,6 +173,8 @@ main{
   background-color: #188c0f;
   border-radius: 2rem;
 }
+
+
 /* work-experience */
 .work-exp{
   min-height: 10vh;
@@ -231,12 +237,58 @@ main{
   color: #1315ab;
 }
 
+@media only screen and (max-width:768px){
+  nav a{
+    font-family: cursive;
+  }
+  .section-display{
+    width: 90%;
+  }
+  .work-exp{
+    width: 80%;
+    font-family: cursive;
+    left: 20% !important;
+  }
+  .path{
+    left: 5%;
+  }
+  .work-exp::after{
+    right: 117%;
+  }
+  .work-exp:nth-of-type(2n)::after{
+    left: -21%;
+  }
+}
+
+@media only screen and (max-width:572px){
+  nav a{
+    font-family: monospace;
+  }
+  .section-display{
+    width: 95%;
+  }
+  .work-exp{
+    width: 80%;
+    font-family: monospace;
+    left: 20% !important;
+  }
+  .path{
+    left: 8%;
+  }
+  .work-exp::after{
+    right: 112%;
+  }
+  .work-exp:nth-of-type(2n)::after{
+    left: -18%;
+  }
+}
+
 /* portfolio */
 #portfolio .section-display>div{
   margin: 1rem;
 }
 .project{
-  width:30rem;
+  width:300px;
   border: 2px solid grey;
   border-radius: 1rem;
   padding: 1rem;
